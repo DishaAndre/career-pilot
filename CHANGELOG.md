@@ -1,3 +1,10 @@
+# [1.67.0](https://github.com/anurag3407/career-pilot/compare/v1.66.0...v1.67.0) (2026-05-28)
+
+
+### Features
+
+* improve profile validation and cleanup profile editing ui ([f8ec4c1](https://github.com/anurag3407/career-pilot/commit/f8ec4c15ac38089e816867ff3b67b7cc5f2ee539))
+
 # [1.66.0](https://github.com/anurag3407/career-pilot/compare/v1.65.0...v1.66.0) (2026-05-28)
 
 
