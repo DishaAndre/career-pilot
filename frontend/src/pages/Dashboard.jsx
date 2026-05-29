@@ -146,11 +146,16 @@ export default function Dashboard() {
 
   const buildGithubStats = (profile = {}) => {
     const repositories = profile.topRepositories || profile.repositories || profile.repos || []
-    const topLanguages = (
+    const languageSource =
       profile.topLanguages ||
       profile.languages ||
       repositories.map((repo) => repo.language).filter(Boolean)
-    ).slice(0, 3)
+
+    const topLanguages = Array.isArray(languageSource)
+      ? languageSource
+      : Object.entries(languageSource || {})
+        .sort((a, b) => Number(b[1]) - Number(a[1]))
+        .map(([language]) => language)
 
     const totalStars = profile.totalStars ??
       profile.stars ??
@@ -159,7 +164,7 @@ export default function Dashboard() {
     return {
       totalRepos: profile.totalRepos ?? profile.public_repos ?? profile.publicRepos ?? repositories.length,
       totalStars,
-      topLanguages,
+      topLanguages: topLanguages.slice(0, 3),
       currentStreak: profile.currentStreak ?? profile.streak?.currentStreak ?? profile.current_streak ?? null
     }
   }
