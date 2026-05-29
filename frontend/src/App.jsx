@@ -26,6 +26,7 @@ import About from './components/portfolio/templates/Tech_Startup/About';
 import ChatbotPortfolio from "./components/portfolio/templates/Chatbot_Portfolio";
 import GamifiedXP from "./components/portfolio/templates/Gamified_XP";
 import TelescopeZoom from "./components/portfolio/templates/Telescope_Zoom";
+import DarkMeshGradient from "./components/portfolio/templates/Dark_Mesh_Gradient";
 
 const JobTracker = lazy(() => import("./pages/JobTracker"));
 // import JobTracker from './pages/JobTracker';
@@ -224,10 +225,15 @@ function AppRoutes() {
         
 
         <Route path="/templates/chatbot" element={<ChatbotPortfolio />} />
+<<<<<<< Updated upstream
 
         {/* <Route path="/templates/day-night-cycle" element={<DayNightCycle />} /> */}
         <Route path="/templates/rainforest-canopy" element={<RainforestCanopy />} />
         <Route path="/templates/northern-fjords" element={<NorthernFjords />} />
+=======
+        <Route path="/dark-mesh" element={<DarkMeshGradient />} />
+
+>>>>>>> Stashed changes
         {/* Core Protected Routes */}
         <Route 
   path="/dashboard" 
